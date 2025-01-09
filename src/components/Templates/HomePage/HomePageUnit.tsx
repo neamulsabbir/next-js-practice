@@ -3,7 +3,7 @@
 import { IAllProducts } from "@/components/libs/interface/products";
 import { Container, SearchInput } from "@/components/SharedFolder";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ProductLists } from "./Component";
 
@@ -11,8 +11,6 @@ export const HomePageUnit = () => {
 	const [loading, setLoading] = useState(false);
 	const [data, setData] = useState<IAllProducts | null>(null);
 
-	const router = useRouter();
-	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
 	const query = Object.fromEntries(searchParams.entries());
